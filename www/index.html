@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="fr" ng-app="app">
+<head>
+  <meta charset="utf-8">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta http-equiv="Content-Security-Policy" content="default-src * *; script-src 'self' 'unsafe-eval' 'unsafe-inline'; connect-src 'self' *; img-src 'self' http://bougetafrance.fr data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com ;">
+
+  <title>Bouge ta France 2017</title>
+
+  <!-- All our CSS -->
+  <!-- onsen-css-components.css is the skin of your app, you can generate one custom skin with this generator: http://components.onsen.io/ -->
+  <link rel="stylesheet" href="lib/onsen/css/onsenui.css">
+  <link rel="stylesheet" href="css/onsen-css-components.css">
+  <link rel="stylesheet" href="css/plugins.css"/>
+  <link rel="stylesheet" href="css/roots.css"/>
+  <link rel="stylesheet" href="css/animate.css"/>
+  <link rel="stylesheet" href="css/app.css"/>
+
+</head>
+
+<body ng-controller="networkController">
+  <ons-sliding-menu
+    menu-page="menu.html"
+    main-page="home.html"
+    side="left"
+    var="menu"
+    type="reveal"
+    max-slide-distance="260px"
+    swipable="true"
+    swipe-target-width="50">
+  </ons-sliding-menu>
+
+
+  <!-- These are our JS libraries that make all the magic in our App -->
+  <script src="lib/onsen/js/angular/angular.js"></script>
+  <script src="lib/onsen/js/angular/angular-touch.js"></script>
+  <script src="lib/onsen/js/onsenui.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="cordova.js"></script>
+  <script src="js/jquery.js"></script>
+  <script src="js/countdown.js"></script>
+  <script src="js/wow.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>

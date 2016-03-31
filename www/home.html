@@ -1,0 +1,121 @@
+<ons-navigator animation="slide" var="news">
+  <ons-page>
+    <ons-toolbar modifier="opacity">
+      <div class="left">
+        <ons-toolbar-button ng-click="menu.toggle()"><ons-icon icon="ion-navicon-round" fixed-width="false"></ons-icon></ons-toolbar-button>
+      </div>
+    </ons-toolbar>
+
+    <div class="app-page home" ng-controller="homeController" data-ng-init="init()">
+      <div class="banner wow bounceIn">
+        <img src="images/logo.png" alt="Logo Bouge ta France" />
+      </div>
+
+      <h1 class="wow bounceInRight">
+        Rejoins le mouvement
+      </h1>
+      <p class="wow bounceInRight">
+        Si tu as entre 15 et 25 ans, toi aussi, tu peux BOUGER TA FRANCE et témoigner de l'amour du prochain !
+      </p>
+
+      <div class="app-hero app-hero-image">
+        <img src="images/icon.png" alt="Logo square" class="logo wow bounceIn" />
+        <div class="app-hero-overlay"></div>
+        <img src="images/stade_havre.jpg" class="app-hero-bg wow bounceInRight">
+      </div>
+
+      <h1 class="wow bounceInRight">Le programme</h1>
+
+      <div class="column mcb-column one column_icon_box ">
+        <div class="icon_box icon_position_left no_border">
+          <div class="image_wrapper wow bounceIn">
+            <img src="http://bougetafrance.fr/wp-content/uploads/2014/09/horloge1.png" class="scale-with-grid" alt="horloge" width="125" height="125" data-pin-nopin="true">
+          </div>
+          <div class="desc_wrapper wow bounceInRight">
+            <h4>Les 10, 11, 12 et 13 Juillet 2017</h4>
+            <div class="desc">Un grand évènement pour toi avec plusieurs milliers de jeunes au Stade Océane du Havre.</div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="column mcb-column one column_icon_box ">
+        <div class="icon_box icon_position_left no_border">
+          <div class="image_wrapper wow bounceIn">
+            <img src="http://bougetafrance.fr/wp-content/uploads/2014/09/14-07.png" class="scale-with-grid" alt="14-07" width="125" height="125" data-pin-nopin="true">
+          </div>
+          <div class="desc_wrapper wow bounceInRight">
+            <h4>Le 14 Juillet</h4>
+            <div class="desc">Un méga rassemblement chrétien avec des activités pour les familles et des actions de témoignages de la foi.</div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="column mcb-column one column_icon_box ">
+        <div class="icon_box icon_position_left no_border">
+          <div data-wow-delay="0.5s" class="image_wrapper wow bounceIn">
+            <img src="http://bougetafrance.fr/wp-content/uploads/2014/09/15-07.png" class="scale-with-grid" alt="15-07" width="125" height="125" data-pin-nopin="true">
+          </div>
+          <div class="desc_wrapper wow bounceInRight">
+            <h4>A partir du 15 Juillet</h4>
+            <div class="desc">
+              Tu seras envoyé(e) dans toute la France pour des missions chrétiennes d'évangélisation et des actions citoyennes...
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <br>
+
+      <h1 class="wow bounceInRight">Bouge Ta France, c'est quoi ?</h1>
+      <p>
+        Un événement national des jeunes protestants évangéliques afin de lancer une dynamique durable d’Evangélisation.
+      </p>
+      <div class="app-hero">
+        <div class="videoWrapper">
+          <iframe width="100%" src="https://www.youtube.com/embed/hgfTWdYFlIo" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+      <br>
+      <div class="app-hero app-hero-image">
+        <h2>Es-tu prêt ?</h2>
+        <div class="downcount clearfix" data-date="07/10/2017 12:00:00" data-offset="0">
+          <div class="column one-fourth column_quick_fact">
+            <div class="quick_fact">
+              <div class="number-wrapper">
+                <div class="number days">00</div>
+              </div>
+              <h3 class="title">jours</h3>
+            </div>
+          </div>
+          <div class="column one-fourth column_quick_fact">
+            <div class="quick_fact">
+              <div class="number-wrapper">
+                <div class="number hours">00</div>
+              </div>
+              <h3 class="title">heures</h3>
+            </div>
+          </div>
+
+          <div class="column one-fourth column_quick_fact">
+            <div class="quick_fact">
+              <div class="number-wrapper">
+                <div class="number minutes">00</div>
+              </div>
+              <h3 class="title">minutes</h3>
+            </div>
+          </div>
+
+          <div class="column one-fourth column_quick_fact">
+            <div class="quick_fact">
+              <div class="number-wrapper">
+                <div class="number seconds">00</div>
+              </div>
+              <h3 class="title">secondes</h3>
+            </div>
+          </div>
+        </div>
+        <img src="images/bg.jpg" class="app-hero-bg">
+      </div>
+    </div>
+  </ons-page>
+</ons-navigator>

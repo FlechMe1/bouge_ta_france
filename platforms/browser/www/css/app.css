@@ -1,0 +1,104 @@
+/*
+* Roots v 2.0.0
+* Follow me @adanarchila at Codecanyon.net
+* URL: http://codecanyon.net/item/roots-phonegapcordova-multipurpose-hybrid-app/9525999
+* Don't forget to rate Roots if you like it! :)
+*/
+
+/* Insert here your custom CSS */
+*{
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.banner{
+  text-align: center;
+}
+
+.home{
+  text-align: center;
+  padding: 10px 15px;
+}
+
+h1{
+  margin: 20px 0 30px;
+  font-size: 28px;
+  color: #3db2ff;
+  position: relative;
+  display: block;
+}
+h1:before{
+  content: '{';
+  display: block;
+  position: absolute;
+  left: -10px;
+  top: -3px;
+  font-size: 30px;
+  opacity: 0.25;
+  color: #3db2ff;
+}
+h1:after{
+  content: '}';
+  display: block;
+  position: absolute;
+  right: -10px;
+  top: -3px;
+  font-size: 30px;
+  opacity: 0.25;
+  color: #3db2ff;
+}
+
+.app-hero{
+  margin: 15px -15px;
+}
+.app-hero h2{
+  color: #c1a893 !important;
+}
+.app-hero .logo{
+  display: block;
+  z-index: 100;
+  position: relative;
+  margin: 20px auto;
+  opacity: 0.8;
+  height: 160px;
+}
+.videoWrapper {
+	position: relative;
+	padding-bottom: 49.25%; /* 16:9 */
+	padding-top: 25px;
+	height: 0;
+}
+.videoWrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.downcount{
+  margin: 20px 0 10px;
+  height: 90px;
+  overflow: hidden;
+  display: block;
+}
+
+.downcount .column{
+  width: 25%;
+  display: inline-block;
+  float: left;
+  height: 90px;
+  position: relative;
+  z-index: 100;
+}
+.downcount .column .number-wrapper{
+  font-size: 38px;
+  color: #3db2ff;
+}
+.downcount .column h3.title{
+  margin: 10px 0;
+  color: #3db2ff;
+  opacity: 0.8;
+  font-size: 16px;
+  text-align: center;
+}
