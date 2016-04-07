@@ -1,6 +1,6 @@
 <ons-navigator animation="slide" var="news">
   <ons-page>
-    <ons-toolbar modifier="opacity">
+    <ons-toolbar modifier="opacity" class="orange">
       <div class="left">
         <ons-toolbar-button ng-click="menu.toggle()"><ons-icon icon="ion-navicon-round" fixed-width="false"></ons-icon></ons-toolbar-button>
       </div>
@@ -9,9 +9,8 @@
 
     <div class="app-page news-page latest-news" ng-controller="contactController">
       <div class="app-hero app-hero-image">
-        <h2>Contact</h2>
-        <div class="app-hero-overlay"></div>
-        <img src="images/place.png" class="app-hero-bg">
+        <h2>Nous contacter</h2>
+        <img src="images/stade_havre.jpg" class="app-hero-bg">
       </div>
 
       <div class="app-page-contact">
@@ -19,20 +18,23 @@
 
         <ons-list modifier="inset">
           <ons-list-item>
-            <input type="text" class="text-input text-input--transparent" placeholder="Name">
+            <input type="text" id="name" class="text-input text-input--transparent" placeholder="Nom">
           </ons-list-item>
           <ons-list-item>
-            <input type="email" class="text-input text-input--transparent" placeholder="Email">
+            <input type="email" id="email" class="text-input text-input--transparent" placeholder="Email">
           </ons-list-item>
           <ons-list-item>
-            <textarea class="textarea textarea--transparent" placeholder="Message"></textarea>
+            <input type="text" id="subject" class="text-input text-input--transparent" placeholder="Sujet">
+          </ons-list-item>
+          <ons-list-item>
+            <textarea class="textarea textarea--transparent" id="message" placeholder="Message"></textarea>
           </ons-list-item>
 
         </ons-list>
 
         <div class="contact-button">
           <ons-button modifier="large" ng-click="sendEmail()">
-            Send Message
+            Envoyer mon message
           </ons-button>
         </div>
 

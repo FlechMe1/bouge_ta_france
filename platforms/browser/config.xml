@@ -26,6 +26,14 @@
     <preference name="android-installLocation" value="auto" />
     <preference name="AndroidPersistentFileLocation" value="Compatibility" />
     <gap:plugin name="de.appplant.cordova.plugin.email-composer" />
+    <icon gap:platform="android" gap:qualifier="ldpi" src="www/res/icon/android/android-icon-36x36.png" />
+    <icon gap:platform="android" gap:qualifier="mdpi" src="www/res/icon/android/android-icon-48x48.png" />
+    <icon gap:platform="android" gap:qualifier="hdpi" src="www/res/icon/android/android-icon-72x72.png" />
+    <icon gap:platform="android" gap:qualifier="xhdpi" src="www/res/icon/android/android-icon-96x96.png" />
+    <gap:splash gap:platform="android" gap:qualifier="port-ldpi" src="www/res/screen/android/screen-mobile.png" />
+    <gap:splash gap:platform="android" gap:qualifier="port-mdpi" src="www/res/screen/android/screen-mobile.png" />
+    <gap:splash gap:platform="android" gap:qualifier="port-hdpi" src="www/res/screen/android/screen-mobile.png" />
+    <gap:splash gap:platform="android" gap:qualifier="port-xhdpi" src="www/res/screen/android/screen-mobile.png" />
     <allow-navigation href="*" />
     <allow-intent href="*" />
     <allow-intent href="tel:*" />

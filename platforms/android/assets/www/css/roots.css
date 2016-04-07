@@ -1,4 +1,4 @@
-/* 
+/*
 * Roots v 2.0.0
 * Follow me @adanarchila at Codecanyon.net
 * URL: http://codecanyon.net/item/roots-phonegapcordova-multipurpose-hybrid-app/9525999
@@ -19,13 +19,7 @@
   font-weight: 400;
 }
 /* Global & Helpers */
-h1,
-h2,
-h3,
-h4,
-h5 {
-  font-family: Helvetica, sans-serif;
-}
+
 .navigation-bar--opacity {
   background: rgba(255, 255, 255, 0.8);
 }

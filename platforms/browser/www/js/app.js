@@ -264,7 +264,7 @@
 
   app.controller('newsController', ['$http', '$scope', '$rootScope', function($http, $scope, $rootScope) {
 
-    $scope.yourAPI = 'http://bougetafrance.fr/api/get_recent_posts/?cookie=paul|1460539984|l55e0mW4EBWPtVOvzQBKBNBsESHy8WPsAA0krKdlBxe|dc721e04380943012494d505b58e7a98626da2377414b1a52c8347f050ed60df';
+    $scope.yourAPI = 'https://bougetafrance.fr/api/get_recent_posts/';
     $scope.items = [];
     $scope.totalPages = 0;
     $scope.currentPage = 1;
@@ -294,35 +294,26 @@
 
 
     $scope.pullContent = function() {
+      console.log("###");
+      console.log($scope.yourAPI);
       $.ajax({
-        url: $scope.yourAPI + '&page=' + $scope.pageNumber,
+        url: $scope.yourAPI,
         success: function(response) {
-          if ($scope.pageNumber > response.pages) {
-
-            // hide the more news button
-            $('#moreButton[rel=home]').fadeOut('fast');
-
+          if($scope.pageNumber > response.pages){
+            $('#moreButton').fadeOut('fast');
           } else {
-
             $scope.items = $scope.items.concat(response.posts);
-            window.localStorage.setObject('rootsPostsHome', $scope.items); // we save the posts in localStorage
-            window.localStorage.setItem('rootsDateHome', new Date());
-            window.localStorage.setItem("rootsLastPageHome", $scope.currentPage);
-            window.localStorage.setItem("rootsTotalPagesHome", response.pages);
-
-            // For dev purposes you can remove the comment for the line below to check on the console the size of your JSON in local Storage
-            // for(var x in localStorage)console.log(x+"="+((localStorage[x].length * 2)/1024/1024).toFixed(2)+" MB");
+            window.localStorage.setObject('rootsPosts', $scope.items); // we save the posts in localStorage
+            window.localStorage.setItem('rootsDate', new Date());
+            window.localStorage.setItem("rootsLastPage", $scope.currentPage);
+            window.localStorage.setItem("rootsTotalPages", response.pages);
 
             $scope.totalPages = response.pages;
             $scope.isFetching = false;
 
-            if ($scope.pageNumber == response.pages) {
-
-              // hide the more news button
-              $('#moreButton[rel=home]').fadeOut('fast');
-
+            if($scope.pageNumber == response.pages){
+              $('#moreButton').fadeOut('fast');
             }
-
           }
         },
         error: function(jqXHR, textStatus, errorThrown) {
@@ -338,57 +329,39 @@
 
     $scope.getAllRecords = function(pageNumber) {
       $scope.isFetching = true;
-
-      if (window.localStorage.getItem("rootsLastPageHome") == null) {
-
+      if (window.localStorage.getItem("rootsLastPage") == null ) {
         $scope.pullContent();
-
       } else {
-
         var now = new Date();
-        var saved = new Date(window.localStorage.getItem("rootsDateHome"));
-
-        var difference = Math.abs(now.getTime() - saved.getTime()) / 3600000;
-
+        var saved = new Date(window.localStorage.getItem("rootsDate"));
+        var difference = Math.abs( now.getTime() - saved.getTime() ) / 3600000;
         // Lets compare the current dateTime with the one we saved when we got the posts.
         // If the difference between the dates is more than 24 hours I think is time to get fresh content
         // You can change the 24 to something shorter or longer
-
-        if (difference > 24) {
+        if(difference > 24){
           // Let's reset everything and get new content from the site.
           $scope.currentPage = 1;
           $scope.pageNumber = 1;
           $scope.lastSavedPage = 0;
-          window.localStorage.removeItem("rootsLastPageHome");
-          window.localStorage.removeItem("rootsPostsHome");
-          window.localStorage.removeItem("rootsTotalPagesHome");
-          window.localStorage.removeItem("rootsDateHome");
-
+          window.localStorage.removeItem("rootsLastPage");
+          window.localStorage.removeItem("rootsPosts");
+          window.localStorage.removeItem("rootsTotalPages");
+          window.localStorage.removeItem("rootsDate");
           $scope.pullContent();
-
         } else {
-
-          $scope.lastSavedPage = window.localStorage.getItem("rootsLastPageHome");
-
+          $scope.lastSavedPage = window.localStorage.getItem("rootsLastPage");
           // If the page we want is greater than the last saved page, we need to pull content from the web
-          if ($scope.currentPage > $scope.lastSavedPage) {
-
+          if($scope.currentPage > $scope.lastSavedPage){
             $scope.pullContent();
-
-            // else if the page we want is lower than the last saved page, we have it on local Storage, so just show it.
+          // else if the page we want is lower than the last saved page, we have it on local Storage, so just show it.
           } else {
-
-            $scope.items = window.localStorage.getObject('rootsPostsHome');
+            $scope.items = window.localStorage.getObject('rootsPosts');
             $scope.currentPage = $scope.lastSavedPage;
-            $scope.totalPages = window.localStorage.getItem("rootsTotalPagesHome");
+            $scope.totalPages = window.localStorage.getItem("rootsTotalPages");
             $scope.isFetching = false;
-
           }
-
         }
-
       }
-
     };
 
     $scope.imgLoadedEvents = {
@@ -398,18 +371,14 @@
     };
 
     $scope.showPost = function(index) {
-
       $rootScope.postContent = $scope.items[index];
       $scope.ons.navigator.pushPage('post.html');
-
     };
 
     $scope.nextPage = function() {
-
       $scope.currentPage++;
       $scope.pageNumber = $scope.currentPage;
       $scope.getAllRecords($scope.pageNumber);
-
     }
 
   }]);
@@ -431,34 +400,67 @@
   }]);
 
   app.controller('contactController', ['$scope', function($scope) {
-    document.addEventListener('deviceready', function () {
-      $scope.sendEmail = function(){
-        console.log("###");
-        console.log(cordova.plugins);
-        cordova.plugins.email.isAvailable(
-          function (isAvailable) {
-            if(isAvailable){
-              cordova.plugins.email.open({
-                to: ["p.gruson@gmail.com"], // email addresses for TO field
-                cc: Array, // email addresses for CC field
-                bcc: Array, // email addresses for BCC field
-                subject: "[Bouge ta France] Nouveau contact depuis l'application", // subject of the email
-                body: "Ceci est un message !", // email body (for HTML, set isHtml to true)
-                isHtml: true, // indicats if the body is HTML or plain text
-              }, function(sent) {
-                console.log('email ' + (sent ? 'sent' : 'cancelled'));
-              }, this);
-            }else{
-              console.log('Service is not available.');
-            }
+    document.addEventListener('deviceready', function() {
+      $scope.sendEmail = function() {
+        //
+        // 'your-name' : $('#name').val(),
+        // 'your-email' : $('#email').val(),
+        // 'your-subject' : $('#subject').val(),
+        // 'your-message' : $('#message').val()
+        //
+        var data = {
+          "to" : "p.gruson@gmail.com",
+          "from" : "noreply@bougetafrance.com",
+          "subject" : "TEST",
+          "html" : "TEST"
+        };
+        $.ajax({
+          url: "https://api.sendinblue.com/v2.0/email",
+          type: 'POST',
+          data: data,
+          headers: {"api-key" : "CMcLwOdQPn7bh80t"},
+          success: function(data) {
+            console.log(data);
+          },
+          error: function() {
+            alert("Impossible d'envoyer le message !");
           }
-        )
+        });
       }
     }, false);
   }]);
 
+  app.controller('markersController', function($scope, $compile) {
+
+    $scope.infoWindow = {
+      title: 'title',
+      content: 'content'
+    };
+
+    $scope.markers = [{
+      'title': 'Stade Océanne - Le Havre',
+      'content': 'Lieu du rassemlement <br> <b>"Bouge Ta France 2017"</b>',
+      'location': [49.499377, 0.169593]
+    }];
+
+    $scope.showMarker = function(event) {
+
+      $scope.marker = $scope.markers[this.id];
+      $scope.infoWindow = {
+        title: $scope.marker.title,
+        content: $scope.marker.content,
+        animation: google.maps.Animation.BOUNCE,
+        icon: '/images/icon.png'
+      };
+      $scope.$apply();
+      $scope.showInfoWindow(event, 'marker-info', this.getPosition());
+
+    }
+
+  });
+
   app.controller('homeController', ['$scope', '$rootScope', function($scope, $rootScope) {
-    $scope.init = function(){
+    $scope.init = function() {
       init_countdown();
       setInterval(init_countdown, 1000);
       new WOW().init();
