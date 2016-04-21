@@ -659,19 +659,13 @@ img.bg {
   margin-top: 15px;
 }
 .app-page.opacity-bar {
-  padding-top: 200px;
   position: absolute;
   left: 0px;
   right: 0px;
   top: 0px;
   bottom: 0px;
 }
-.app-page.opacity-bar .app-hero {
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
+
 .app-page .app-page-gallery img {
   width: 100%;
   height: auto;
