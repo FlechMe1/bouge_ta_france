@@ -7,7 +7,6 @@
 
 // In this file we are goint to include all the Controllers our app it's going to need
 
-
 (function() {
   'use strict';
 
@@ -403,23 +402,16 @@
   app.controller('contactController', ['$scope', function($scope) {
     document.addEventListener('deviceready', function() {
       $scope.sendEmail = function() {
-        //
-        // 'your-name' : $('#name').val(),
-        // 'your-email' : $('#email').val(),
-        // 'your-subject' : $('#subject').val(),
-        // 'your-message' : $('#message').val()
-        //
         var data = {
-          "to" : "p.gruson@gmail.com",
-          "from" : "noreply@bougetafrance.com",
-          "subject" : "TEST",
-          "html" : "TEST"
+          "email" : $('#email').val(),
+          "name" : $('#name').val(),
+          "subject" : $('#subject').val(),
+          "message" : $('#message').val()
         };
         $.ajax({
-          url: "https://api.sendinblue.com/v2.0/email",
-          type: 'POST',
+          url: "https://bougetafrance.fr/send_email/sending.php",
+          method: 'POST',
           data: data,
-          headers: {"api-key" : "CMcLwOdQPn7bh80t"},
           success: function(data) {
             console.log(data);
           },
