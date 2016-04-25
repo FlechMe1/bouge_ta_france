@@ -408,12 +408,19 @@
           "subject" : $('#subject').val(),
           "message" : $('#message').val()
         };
+
+        $('#email').val("");
+        $('#name').val("");
+        $('#subject').val("");
+        $('#message').val("");
+
         $.ajax({
           url: "https://bougetafrance.fr/send_email/sending.php",
           method: 'POST',
           data: data,
           success: function(data) {
             console.log(data);
+            alert("Votre message a été envoyé. Nous vous répondrons dans les meilleurs délais")
           },
           error: function() {
             alert("Impossible d'envoyer le message !");
