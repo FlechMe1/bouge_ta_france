@@ -386,7 +386,8 @@
   app.controller('speakersController', ['$http', '$scope', '$rootScope', function($http, $scope, $rootScope) {
 
     $scope.showSpeaker = function(page) {
-      $scope.ons.navigator.pushPage(page);
+      console.log(page);
+      $scope.menu.setMainPage(page);
     };
 
   }]);
