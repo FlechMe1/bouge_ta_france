@@ -1,4 +1,4 @@
-<ons-navigator animation="slide" var="news">
+<ons-navigator animation="slide" var="speakers">
   <ons-page>
     <ons-toolbar modifier="opacity">
       <div class="left">
@@ -6,16 +6,45 @@
       </div>
     </ons-toolbar>
 
-    <div class="app-page home opacity-bar">
+    <div class="app-page home opacity-bar" ng-controller="speakersController">
       <div class="app-hero blue app-hero-image app-hero-bottom">
       </div>
 
       <h1>Orateurs</h1>
 
       <div class="app-page-content">
-        <p>
-          Page en cours de réalisation
-        </p>
+        <div class="speaker" ng-click="showSpeaker('speakers/david-platt.html');">
+          <img src="./images/speakers/david-platt.jpg" alt="David Platt" class="circled" />
+          <h2>David Platt</h2>
+        </div>
+        <hr class="small">
+        <div class="speaker">
+          <a ng-click="showSpeaker('speakers/franck-meyer.html');">
+            <img src="./images/speakers/franck-meyer.jpg" alt="Franck Meyer" class="circled" />
+            <h2>Franck Meyer</h2>
+          </a>
+        </div>
+        <hr class="small">
+        <div class="speaker">
+          <a ng-click="showSpeaker('speakers/rene-delattre.html');">
+            <img src="./images/speakers/rene-delattre.jpg" alt="Rene Delattre" class="circled" />
+            <h2>Rene Delattre</h2>
+          </a>
+        </div>
+        <hr class="small">
+        <div class="speaker">
+          <a ng-click="showSpeaker('speakers/thiebault-geyer.html');">
+            <img src="./images/speakers/thiebault-geyer.jpg" alt="Thiebault Geyer" class="circled" />
+            <h2>Thiebault Geyer</h2>
+          </a>
+        </div>
+        <hr class="small">
+        <div class="speaker">
+          <a ng-click="showSpeaker('speakers/timothee-paton.html');">
+            <img src="./images/speakers/timothee-paton.jpg" alt="Timothée Paton" class="circled" />
+            <h2>Timothée Paton</h2>
+          </a>
+        </div>
       </div>
 
     </div>

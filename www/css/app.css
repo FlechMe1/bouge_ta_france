@@ -23,6 +23,16 @@ body{
   padding: 10px 15px 0;
 }
 
+hr.small{
+  margin: 25px auto;
+  width: 150px;
+  border: solid 0.5px #ccc;
+}
+
+.circled{
+  border-radius: 100%;
+}
+
 h1{
   margin: 20px 0 30px;
   font-size: 28px;

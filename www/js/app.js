@@ -383,6 +383,15 @@
 
   }]);
 
+  app.controller('speakersController', ['$http', '$scope', '$rootScope', function($http, $scope, $rootScope) {
+
+    $scope.showSpeaker = function(page) {
+      console.log(page);
+      $scope.menu.setMainPage(page);
+    };
+
+  }]);
+
   app.controller('postController', ['$scope', '$rootScope', '$sce', function($scope, $rootScope, $sce) {
 
     $scope.item = $rootScope.postContent;
