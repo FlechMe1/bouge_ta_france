@@ -19,10 +19,10 @@
         <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
         <param name="onload" value="true" />
     </feature>
-    <splash density="port-hdpi" src="www/res/screen/android/large.jpg" />
-    <splash density="port-ldpi" src="www/res/screen/android/small.jpg" />
-    <splash density="port-mdpi" src="www/res/screen/android/medium.jpg" />
-    <splash density="port-xhdpi" src="www/res/screen/android//xlarge.jpg" />
+    <splash density="port-hdpi" src="www/res/screen/android/large.png" />
+    <splash density="port-ldpi" src="www/res/screen/android/small.png" />
+    <splash density="port-mdpi" src="www/res/screen/android/medium.png" />
+    <splash density="port-xhdpi" src="www/res/screen/android//xlarge.png" />
     <allow-intent href="market:*" />
     <name>Bouge Ta France</name>
     <description>
@@ -54,10 +54,10 @@
     <icon gap:platform="android" gap:qualifier="mdpi" src="www/res/icon/android/android-icon-48x48.png" />
     <icon gap:platform="android" gap:qualifier="hdpi" src="www/res/icon/android/android-icon-72x72.png" />
     <icon gap:platform="android" gap:qualifier="xhdpi" src="www/res/icon/android/android-icon-96x96.png" />
-    <gap:splash gap:platform="android" gap:qualifier="port-ldpi" src="www/res/screen/android/small.jpg" />
-    <gap:splash gap:platform="android" gap:qualifier="port-mdpi" src="www/res/screen/android/medium.jpg" />
-    <gap:splash gap:platform="android" gap:qualifier="port-hdpi" src="www/res/screen/android/large.jpg" />
-    <gap:splash gap:platform="android" gap:qualifier="port-xhdpi" src="www/res/screen/android/xlarge.jpg" />
+    <gap:splash gap:platform="android" gap:qualifier="port-ldpi" src="www/res/screen/android/small.png" />
+    <gap:splash gap:platform="android" gap:qualifier="port-mdpi" src="www/res/screen/android/medium.png" />
+    <gap:splash gap:platform="android" gap:qualifier="port-hdpi" src="www/res/screen/android/large.png" />
+    <gap:splash gap:platform="android" gap:qualifier="port-xhdpi" src="www/res/screen/android/xlarge.png" />
     <allow-navigation href="*" />
     <allow-intent href="*" />
     <allow-intent href="tel:*" />
