@@ -181,6 +181,20 @@ module.exports = [
         "id": "org.apache.cordova.network-information.NetworkProxy",
         "pluginId": "org.apache.cordova.network-information",
         "runs": true
+    },
+    {
+        "file": "plugins/cordova-plugin-splashscreen/www/splashscreen.js",
+        "id": "cordova-plugin-splashscreen.SplashScreen",
+        "pluginId": "cordova-plugin-splashscreen",
+        "clobbers": [
+            "navigator.splashscreen"
+        ]
+    },
+    {
+        "file": "plugins/cordova-plugin-splashscreen/src/browser/SplashScreenProxy.js",
+        "id": "cordova-plugin-splashscreen.SplashScreenProxy",
+        "pluginId": "cordova-plugin-splashscreen",
+        "runs": true
     }
 ];
 module.exports.metadata = 
@@ -189,7 +203,8 @@ module.exports.metadata =
     "cordova-plugin-email-composer": "0.8.3",
     "org.apache.cordova.file": "1.3.2",
     "org.apache.cordova.network-information": "0.2.14",
-    "cordova-plugin-whitelist": "1.2.1"
+    "cordova-plugin-whitelist": "1.2.1",
+    "cordova-plugin-splashscreen": "3.1.0"
 }
 // BOTTOM OF METADATA
 });

@@ -173,6 +173,13 @@ module.exports = [
         "file": "plugins/cordova-plugin-whitelist/whitelist.js",
         "id": "cordova-plugin-whitelist.whitelist",
         "runs": true
+    },
+    {
+        "file": "plugins/cordova-plugin-splashscreen/www/splashscreen.js",
+        "id": "cordova-plugin-splashscreen.SplashScreen",
+        "clobbers": [
+            "navigator.splashscreen"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -181,7 +188,8 @@ module.exports.metadata =
     "cordova-plugin-email-composer": "0.8.3",
     "org.apache.cordova.file": "1.3.2",
     "org.apache.cordova.network-information": "0.2.14",
-    "cordova-plugin-whitelist": "1.2.1"
+    "cordova-plugin-whitelist": "1.2.1",
+    "cordova-plugin-splashscreen": "3.1.0"
 };
 // BOTTOM OF METADATA
 });

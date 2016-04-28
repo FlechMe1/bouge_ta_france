@@ -8,7 +8,7 @@
         Paul Gruson
     </author>
     <content src="index.html" />
-    <access origin="*" />
+    <access origin="bougetafrance.fr" />
 
 
     <preference name="permissions" value="none" />
@@ -37,10 +37,30 @@
     <icon gap:platform="android" gap:qualifier="hdpi" src="www/res/icon/android/android-icon-72x72.png"/>
     <icon gap:platform="android" gap:qualifier="xhdpi" src="www/res/icon/android/android-icon-96x96.png"/>
 
-    <gap:splash gap:platform="android" gap:qualifier="port-ldpi" src="www/res/screen/android/screen-mobile.png"/>
-    <gap:splash gap:platform="android" gap:qualifier="port-mdpi" src="www/res/screen/android/screen-mobile.png"/>
-    <gap:splash gap:platform="android" gap:qualifier="port-hdpi" src="www/res/screen/android/screen-mobile.png"/>
-    <gap:splash gap:platform="android" gap:qualifier="port-xhdpi" src="www/res/screen/android/screen-mobile.png"/>
+    <gap:splash gap:platform="android" gap:qualifier="port-ldpi" src="www/res/screen/android/small.jpg"/>
+    <gap:splash gap:platform="android" gap:qualifier="port-mdpi" src="www/res/screen/android/medium.jpg"/>
+    <gap:splash gap:platform="android" gap:qualifier="port-hdpi" src="www/res/screen/android/large.jpg"/>
+    <gap:splash gap:platform="android" gap:qualifier="port-xhdpi" src="www/res/screen/android/xlarge.jpg"/>
+
+    <platform name="android">
+      <splash src="www/res/screen/android/large.jpg" density="port-hdpi"/>
+      <splash src="www/res/screen/android/small.jpg" density="port-ldpi"/>
+      <splash src="www/res/screen/android/medium.jpg" density="port-mdpi"/>
+      <splash src="www/res/screen/android//xlarge.jpg" density="port-xhdpi"/>
+    </platform>
+
+    <!-- <platform name="ios">
+      <splash src="res/screen/ios/Default~iphone.png" width="320" height="480"/>
+      <splash src="res/screen/ios/Default@2x~iphone.png" width="640" height="960"/>
+      <splash src="res/screen/ios/Default-Portrait~ipad.png" width="768" height="1024"/>
+      <splash src="res/screen/ios/Default-Portrait@2x~ipad.png" width="1536" height="2048"/>
+      <splash src="res/screen/ios/Default-Landscape~ipad.png" width="1024" height="768"/>
+      <splash src="res/screen/ios/Default-Landscape@2x~ipad.png" width="2048" height="1536"/>
+      <splash src="res/screen/ios/Default-568h@2x~iphone.png" width="640" height="1136"/>
+      <splash src="res/screen/ios/Default-667h.png" width="750" height="1334"/>
+      <splash src="res/screen/ios/Default-736h.png" width="1242" height="2208"/>
+      <splash src="res/screen/ios/Default-Landscape-736h.png" width="2208" height="1242"/>
+    </platform> -->
 
     <plugin name="cordova-plugin-whitelist" />
     <allow-navigation href="*" />
