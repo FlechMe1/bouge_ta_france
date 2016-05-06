@@ -8,7 +8,7 @@
         Paul Gruson
     </author>
     <content src="index.html" />
-    <access origin="bougetafrance.fr" />
+    <access origin="*" />
 
 
     <preference name="permissions" value="none" />

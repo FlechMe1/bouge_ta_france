@@ -13,13 +13,6 @@ module.exports = [
         "runs": true
     },
     {
-        "file": "plugins/nl.x-services.plugins.socialsharing/www/SocialSharing.js",
-        "id": "nl.x-services.plugins.socialsharing.SocialSharing",
-        "clobbers": [
-            "window.plugins.socialsharing"
-        ]
-    },
-    {
         "file": "plugins/org.apache.cordova.inappbrowser/www/inappbrowser.js",
         "id": "org.apache.cordova.inappbrowser.inappbrowser",
         "clobbers": [
@@ -47,7 +40,6 @@ module.exports.metadata =
 {
     "cordova-plugin-splashscreen": "3.1.0",
     "cordova-plugin-whitelist": "1.2.1",
-    "nl.x-services.plugins.socialsharing": "4.3.13",
     "org.apache.cordova.geolocation": "0.3.11",
     "org.apache.cordova.inappbrowser": "0.5.4",
     "org.apache.cordova.network-information": "0.2.14"

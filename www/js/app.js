@@ -134,7 +134,7 @@
     $scope.categoryID = $rootScope.categoryID.id;
     $scope.catPrefix = 'cat' + $scope.categoryID;
 
-    $scope.catAPI = 'http://bougetafrance.fr/api/get_category_posts/?cookie=paul|1460539984|l55e0mW4EBWPtVOvzQBKBNBsESHy8WPsAA0krKdlBxe|dc721e04380943012494d505b58e7a98626da2377414b1a52c8347f050ed60df&id=' + $scope.categoryID;
+    $scope.catAPI = 'http://bougetafrance.fr/api/get_category_posts/&id=' + $scope.categoryID;
     $scope.catItems = [];
     $scope.catTotalPages = 0;
     $scope.catCurrentPage = 1;
@@ -404,6 +404,23 @@
       done: function(instance) {
         angular.element(instance.elements[0]).removeClass('is-loading').addClass('is-loaded');
       }
+    };
+
+  }]);
+
+  app.controller('mediasController', ['$scope', '$rootScope', '$http', '$sce', function($scope, $rootScope, $http, $sce) {
+
+    $scope.yourAPI = "https://bougetafrance.fr/api/get_page/?slug=mediatheque&callback=JSON_CALLBACK"
+
+    $scope.getPage = function() {
+      console.log("ok");
+      $http.jsonp($scope.yourAPI).success(function(response) {
+        console.log(response);
+        $scope.item =response.page;
+      });
+    }
+    $scope.renderHtml = function(htmlCode) {
+      return $sce.trustAsHtml(htmlCode);
     };
 
   }]);

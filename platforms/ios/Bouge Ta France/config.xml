@@ -53,7 +53,7 @@
         Paul Gruson
     </author>
     <content src="index.html" />
-    <access origin="bougetafrance.fr" />
+    <access origin="*" />
     <preference name="permissions" value="none" />
     <preference name="orientation" value="portrait" />
     <preference name="target-device" value="universal" />
