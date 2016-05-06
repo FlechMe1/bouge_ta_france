@@ -35,18 +35,18 @@
   }
 
   // This directive will allow us to cache all the images that have the img-cache attribute in the <img> tag
-  app.directive('imgCache', ['$document', function($document) {
+  app.directive('imgCache', ['$document', function ($document) {
     return {
-      link: function(scope, ele, attrs) {
+      link: function (scope, ele, attrs) {
         var target = $(ele);
 
-        scope.$on('ImgCacheReady', function() {
+        scope.$on('ImgCacheReady', function () {
 
-          ImgCache.isCached(attrs.src, function(path, success) {
-            if (success) {
+          ImgCache.isCached(attrs.src, function(path, success){
+            if(success){
               ImgCache.useCachedFile(target);
             } else {
-              ImgCache.cacheFile(attrs.src, function() {
+              ImgCache.cacheFile(attrs.src, function(){
                 ImgCache.useCachedFile(target);
               });
             }
@@ -182,7 +182,13 @@
 
       });
 
-    }
+    };
+
+    $scope.imgLoadedEvents = {
+        done: function(instance) {
+            angular.element(instance.elements[0]).removeClass('is-loading').addClass('is-loaded');
+        }
+    };
 
     $scope.showPost = function(index) {
 
@@ -270,60 +276,76 @@
     $scope.pageNumber = 1;
     $scope.isFetching = true;
     $scope.lastSavedPage = 0;
-
     // Let's initiate this on the first Controller that will be executed.
     ons.ready(function() {
 
       // Cache Images Setup
       // Set the debug to false before deploying your app
-      ImgCache.options.debug = false;
+      ImgCache.options.debug = true;
 
-      ImgCache.init(function() {
+      ImgCache.init(function(){
 
         //console.log('ImgCache init: success!');
         $rootScope.$broadcast('ImgCacheReady');
         // from within this function you're now able to call other ImgCache methods
         // or you can wait for the ImgCacheReady event
 
-      }, function() {
+      }, function(){
         //console.log('ImgCache init: error! Check the log for errors');
       });
 
     });
 
-
     $scope.pullContent = function() {
-      $http.jsonp($scope.yourAPI+'/?page='+$scope.pageNumber+'&callback=JSON_CALLBACK').success(function(response) {
+      $.ajax({
+        url: $scope.yourAPI+'?page='+$scope.pageNumber,
+        dataType: 'json',
+        success: function(response){
 
-        if($scope.pageNumber > response.pages){
-
-          // hide the more news button
-          $('#moreButton').fadeOut('fast');
-
-        } else {
-
-          $scope.items = $scope.items.concat(response.posts);
-          window.localStorage.setObject('rootsPosts', $scope.items); // we save the posts in localStorage
-          window.localStorage.setItem('rootsDate', new Date());
-          window.localStorage.setItem("rootsLastPage", $scope.currentPage);
-          window.localStorage.setItem("rootsTotalPages", response.pages);
-
-          // For dev purposes you can remove the comment for the line below to check on the console the size of your JSON in local Storage
-          // for(var x in localStorage)console.log(x+"="+((localStorage[x].length * 2)/1024/1024).toFixed(2)+" MB");
-
-          $scope.totalPages = response.pages;
-          $scope.isFetching = false;
-
-          if($scope.pageNumber == response.pages){
+          if($scope.pageNumber > response.pages){
 
             // hide the more news button
             $('#moreButton').fadeOut('fast');
 
+          } else {
+
+            $scope.items = $scope.items.concat(response.posts);
+            window.localStorage.setObject('rootsPosts', $scope.items); // we save the posts in localStorage
+            window.localStorage.setItem('rootsDate', new Date());
+            window.localStorage.setItem("rootsLastPage", $scope.currentPage);
+            window.localStorage.setItem("rootsTotalPages", response.pages);
+
+            // For dev purposes you can remove the comment for the line below to check on the console the size of your JSON in local Storage
+            // for(var x in localStorage)console.log(x+"="+((localStorage[x].length * 2)/1024/1024).toFixed(2)+" MB");
+
+            $scope.totalPages = response.pages;
+            $scope.isFetching = false;
+
+            if($scope.pageNumber == response.pages){
+
+              // hide the more news button
+              $('#moreButton').fadeOut('fast');
+
+            }
+
           }
-
+        },
+        error: function(){
+          alert("### ERROR ###");
+          alert($scope.yourAPI+'?page='+$scope.pageNumber);
         }
-
       });
+
+      // $http.jsonp($scope.yourAPI+'?page='+$scope.pageNumber+'&callback=JSON_CALLBACK')
+      // .error(function(response, text){
+      //   alert("### ERROR ###");
+      //   alert(text);
+      // })
+      // .success(function(response) {
+      //
+      //
+      //
+      // });
 
     }
 
@@ -338,7 +360,7 @@
         // Lets compare the current dateTime with the one we saved when we got the posts.
         // If the difference between the dates is more than 24 hours I think is time to get fresh content
         // You can change the 24 to something shorter or longer
-        if(difference > 24){
+        if(difference > 5){
           // Let's reset everything and get new content from the site.
           $scope.currentPage = 1;
           $scope.pageNumber = 1;
@@ -408,15 +430,18 @@
 
   }]);
 
-  app.controller('mediasController', ['$scope', '$rootScope', '$http', '$sce', function($scope, $rootScope, $http, $sce) {
+  app.controller('mediasController', ['$scope', '$http', '$sce', function($scope, $http, $sce) {
 
-    $scope.yourAPI = "https://bougetafrance.fr/api/get_page/?slug=mediatheque&callback=JSON_CALLBACK"
+    $scope.yourAPI = "https://bougetafrance.fr/api/get_page/?slug=mediatheque"
 
     $scope.getPage = function() {
-      console.log("ok");
-      $http.jsonp($scope.yourAPI).success(function(response) {
-        console.log(response);
-        $scope.item =response.page;
+      $.ajax({
+        url: $scope.yourAPI,
+        dataType: 'json',
+        success: function(response){
+          console.log(response);
+          $scope.item =response.page;
+        }
       });
     }
     $scope.renderHtml = function(htmlCode) {
@@ -470,7 +495,6 @@
     }];
 
     $scope.showMarker = function(event) {
-
       $scope.marker = $scope.markers[this.id];
       $scope.infoWindow = {
         title: $scope.marker.title,

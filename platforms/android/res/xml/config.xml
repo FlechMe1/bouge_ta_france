@@ -29,6 +29,8 @@
     </author>
     <content src="index.html" />
     <access origin="*" />
+    <access origin="*.google.com" />
+    <access origin="*.googleapis.com" />
     <preference name="permissions" value="none" />
     <preference name="orientation" value="portrait" />
     <preference name="target-device" value="universal" />
