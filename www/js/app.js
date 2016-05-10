@@ -66,30 +66,12 @@
     $scope.pageNumber = 1;
     $scope.isFetching = true;
     $scope.lastSavedPage = 0;
-    // Let's initiate this on the first Controller that will be executed.
-    ons.ready(function() {
 
-      // Cache Images Setup
-      // Set the debug to false before deploying your app
-      ImgCache.options.debug = true;
-
-      ImgCache.init(function(){
-
-        //console.log('ImgCache init: success!');
-        $rootScope.$broadcast('ImgCacheReady');
-        // from within this function you're now able to call other ImgCache methods
-        // or you can wait for the ImgCacheReady event
-
-      }, function(){
-        //console.log('ImgCache init: error! Check the log for errors');
-      });
-
-    });
 
     $scope.pullContent = function() {
       $.ajax({
         url: $scope.yourAPI+'?page='+$scope.pageNumber,
-        dataType: 'json',
+        dataType: 'jsonp',
         success: function(response){
 
           if($scope.pageNumber > response.pages){
