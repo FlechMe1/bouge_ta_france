@@ -7,12 +7,6 @@
         "files": {}
     },
     "installed_plugins": {
-        "cordova-plugin-splashscreen": {
-            "PACKAGE_NAME": "com.phonegap.bougetafrance"
-        },
-        "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "com.phonegap.bougetafrance"
-        },
         "org.apache.cordova.geolocation": {
             "PACKAGE_NAME": "com.phonegap.bougetafrance"
         },
