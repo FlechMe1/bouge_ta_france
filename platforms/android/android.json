@@ -27,14 +27,6 @@
                 "parents": {
                     "/*": [
                         {
-                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\" />",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\" />",
-                            "count": 1
-                        },
-                        {
                             "xml": "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\" />",
                             "count": 1
                         }
@@ -45,9 +37,6 @@
     },
     "installed_plugins": {
         "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "com.phonegap.bougetafrance"
-        },
-        "org.apache.cordova.geolocation": {
             "PACKAGE_NAME": "com.phonegap.bougetafrance"
         },
         "org.apache.cordova.inappbrowser": {
@@ -84,7 +73,6 @@
     ],
     "plugin_metadata": {
         "cordova-plugin-whitelist": "1.2.2",
-        "org.apache.cordova.geolocation": "0.3.11",
         "org.apache.cordova.inappbrowser": "0.5.4",
         "org.apache.cordova.network-information": "0.2.14"
     }
