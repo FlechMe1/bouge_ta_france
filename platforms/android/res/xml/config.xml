@@ -7,17 +7,6 @@
     <feature name="NetworkStatus">
         <param name="android-package" value="org.apache.cordova.networkinformation.NetworkManager" />
     </feature>
-    <splash density="port-hdpi" src="www/res/screen/android/large.png" />
-    <splash density="port-ldpi" src="www/res/screen/android/small.png" />
-    <splash density="port-mdpi" src="www/res/screen/android/medium.png" />
-    <splash density="port-xhdpi" src="www/res/screen/android//xlarge.png" />
-    <access origin="https://bougetafrance.fr" />
-    <access origin="*.google.com" />
-    <access origin="*.googleapis.com" />
-    <gap:splash gap:platform="android" gap:qualifier="port-xhdpi" src="www/res/screen/android/xlarge.png" />
-    <preference name="SplashScreen" value="images/logo_512.png" />
-    <preference name="SplashScreenDelay" value="3000" />
-    <preference name="SplashMaintainAspectRatio" value="true" />
     <allow-intent href="market:*" />
     <name>Bouge Ta France</name>
     <description>
@@ -28,23 +17,12 @@
     </author>
     <content src="index.html" />
     <access origin="*" />
-    <preference name="permissions" value="none" />
-    <preference name="orientation" value="portrait" />
-    <preference name="target-device" value="universal" />
-    <preference name="fullscreen" value="true" />
-    <preference name="webviewbounce" value="true" />
-    <preference name="prerendered-icon" value="true" />
-    <preference name="stay-in-webview" value="false" />
-    <preference name="ios-statusbarstyle" value="black-opaque" />
-    <preference name="detect-data-types" value="true" />
-    <preference name="exit-on-suspend" value="false" />
-    <preference name="show-splash-screen-spinner" value="true" />
-    <preference name="auto-hide-splash-screen" value="true" />
-    <preference name="disable-cursor" value="false" />
-    <preference name="android-minSdkVersion" value="14" />
+    <preference name="KeyboardDisplayRequiresUserAction" value="true" />
+    <preference name="MediaPlaybackRequiresUserAction" value="false" />
+    <preference name="AllowInlineMediaPlayback" value="true" />
+    <preference name="DisallowOverscroll" value="true" />
+    <preference name="webviewbounce" value="false" />
     <preference name="android-installLocation" value="auto" />
-    <preference name="AndroidPersistentFileLocation" value="Compatibility" />
-    <gap:plugin name="de.appplant.cordova.plugin.email-composer" />
     <icon gap:platform="android" gap:qualifier="ldpi" src="www/res/icon/android/android-icon-36x36.png" />
     <icon gap:platform="android" gap:qualifier="mdpi" src="www/res/icon/android/android-icon-48x48.png" />
     <icon gap:platform="android" gap:qualifier="hdpi" src="www/res/icon/android/android-icon-72x72.png" />
