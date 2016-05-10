@@ -140,7 +140,7 @@
         // Lets compare the current dateTime with the one we saved when we got the posts.
         // If the difference between the dates is more than 24 hours I think is time to get fresh content
         // You can change the 24 to something shorter or longer
-        if(difference > 5){
+        if(difference > 1){
           // Let's reset everything and get new content from the site.
           $scope.currentPage = 1;
           $scope.pageNumber = 1;

@@ -8,7 +8,7 @@
         Paul Gruson
     </author>
     <content src="index.html" />
-    <access origin="*" />
+    <access origin="https://bougetafrance.fr" />
     <preference name="KeyboardDisplayRequiresUserAction" value="true" />
     <preference name="MediaPlaybackRequiresUserAction" value="false" />
     <preference name="AllowInlineMediaPlayback" value="true" />
