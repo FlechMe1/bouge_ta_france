@@ -71,7 +71,7 @@
     $scope.pullContent = function() {
       $.ajax({
         url: $scope.yourAPI+'?page='+$scope.pageNumber,
-        dataType: 'jsonp',
+        dataType: 'json',
         success: function(response){
 
           if($scope.pageNumber > response.pages){
