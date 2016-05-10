@@ -26,10 +26,10 @@ module.exports = [
 module.exports.metadata = 
 // TOP OF METADATA
 {
+    "cordova-plugin-whitelist": "1.2.2",
     "org.apache.cordova.geolocation": "0.3.11",
     "org.apache.cordova.inappbrowser": "0.5.4",
-    "org.apache.cordova.network-information": "0.2.14",
-    "cordova-plugin-whitelist": "1.2.2"
+    "org.apache.cordova.network-information": "0.2.14"
 };
 // BOTTOM OF METADATA
 });
