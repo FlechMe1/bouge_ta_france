@@ -28,7 +28,7 @@
         Paul Gruson
     </author>
     <content src="index.html" />
-    <access origin="*" />
+    <access origin="https://bougetafrance.fr" />
     <access origin="*.google.com" />
     <access origin="*.googleapis.com" />
     <preference name="permissions" value="none" />
