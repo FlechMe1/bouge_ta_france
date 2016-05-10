@@ -10,8 +10,7 @@
     <content src="index.html" />
     <access origin="*" />
 
-
-    <uses-permission android:name="android.permission.INTERNET" />
+    <feature name="http://api.phonegap.com/1.0/network"/>
 
     <preference name="KeyboardDisplayRequiresUserAction" value="true" />
     <preference name="MediaPlaybackRequiresUserAction" value="false" />
