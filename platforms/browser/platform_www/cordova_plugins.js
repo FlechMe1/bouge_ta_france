@@ -27,7 +27,6 @@ module.exports = [
 module.exports.metadata = 
 // TOP OF METADATA
 {
-    "org.apache.cordova.inappbrowser": "0.5.4",
     "org.apache.cordova.network-information": "0.2.14",
     "cordova-plugin-whitelist": "1.2.2"
 }

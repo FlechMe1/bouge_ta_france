@@ -66,12 +66,6 @@
         "is_top_level": true,
         "variables": {}
     },
-    "org.apache.cordova.inappbrowser": {
-        "source": {
-            "type": "registry",
-            "id": "org.apache.cordova.inappbrowser"
-        }
-    },
     "cordova-plugin-inappbrowser": {
         "source": {
             "type": "registry",

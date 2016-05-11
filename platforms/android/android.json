@@ -13,10 +13,6 @@
                             "count": 1
                         },
                         {
-                            "xml": "<feature name=\"InAppBrowser\"><param name=\"android-package\" value=\"org.apache.cordova.inappbrowser.InAppBrowser\" /></feature>",
-                            "count": 1
-                        },
-                        {
                             "xml": "<feature name=\"NetworkStatus\"><param name=\"android-package\" value=\"org.apache.cordova.networkinformation.NetworkManager\" /></feature>",
                             "count": 1
                         }
@@ -39,22 +35,12 @@
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "com.phonegap.bougetafrance"
         },
-        "org.apache.cordova.inappbrowser": {
-            "PACKAGE_NAME": "com.phonegap.bougetafrance"
-        },
         "org.apache.cordova.network-information": {
             "PACKAGE_NAME": "com.phonegap.bougetafrance"
         }
     },
     "dependent_plugins": {},
     "modules": [
-        {
-            "file": "plugins/org.apache.cordova.inappbrowser/www/inappbrowser.js",
-            "id": "org.apache.cordova.inappbrowser.inappbrowser",
-            "clobbers": [
-                "window.open"
-            ]
-        },
         {
             "file": "plugins/org.apache.cordova.network-information/www/network.js",
             "id": "org.apache.cordova.network-information.network",
@@ -73,7 +59,6 @@
     ],
     "plugin_metadata": {
         "cordova-plugin-whitelist": "1.2.2",
-        "org.apache.cordova.inappbrowser": "0.5.4",
         "org.apache.cordova.network-information": "0.2.14"
     }
 }

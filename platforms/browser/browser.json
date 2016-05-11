@@ -7,9 +7,6 @@
         "files": {}
     },
     "installed_plugins": {
-        "org.apache.cordova.inappbrowser": {
-            "PACKAGE_NAME": "com.phonegap.bougetafrance"
-        },
         "org.apache.cordova.network-information": {
             "PACKAGE_NAME": "com.phonegap.bougetafrance"
         },
@@ -44,7 +41,6 @@
         }
     ],
     "plugin_metadata": {
-        "org.apache.cordova.inappbrowser": "0.5.4",
         "org.apache.cordova.network-information": "0.2.14",
         "cordova-plugin-whitelist": "1.2.2"
     }
