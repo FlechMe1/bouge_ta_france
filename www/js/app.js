@@ -20,24 +20,7 @@
   });
 
   app.controller('networkController', function($scope) {
-    // Check if is Offline
-    document.addEventListener("offline", function(){
 
-      offlineMessage.show();
-
-      /*
-       * With this line of code you can hide the modal in 8 seconds but the user will be able to use your app
-       * If you want to block the use of the app till the user gets internet again, please delete this line.
-       */
-
-      setTimeout('offlineMessage.hide()', 8000);
-
-    }, false);
-
-    document.addEventListener("online", function(){
-      // If you remove the "setTimeout('offlineMessage.hide()', 8000);" you must remove the comment for the line above
-      // offlineMessage.hide();
-    });
   });
 
   // This functions will help us save the JSON in the localStorage to read the website content offline
@@ -87,9 +70,7 @@
 
     $scope.pullContent = function() {
       $http.jsonp($scope.yourAPI+'/?page='+$scope.pageNumber+'&callback=JSON_CALLBACK').error(function(jqXHR, textStatus){
-        alert("### ERROR ###");
-        alert(textStatus);
-        alert($scope.yourAPI+'?page='+$scope.pageNumber+'&callback=JSON_CALLBACK');
+        alert("### ERREUR - IMPOSSIBLE DE CHARGER LES ACTUALITES ###");
       }).success(function(response) {
 
         if($scope.pageNumber > response.pages){
