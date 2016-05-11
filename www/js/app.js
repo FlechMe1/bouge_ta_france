@@ -69,10 +69,10 @@
 
 
     $scope.pullContent = function() {
-      $http.jsonp($scope.yourAPI+'/?page='+$scope.pageNumber+'&callback=JSON_CALLBACK').error(function(jqXHR, textStatus, errorThrown){
+      $http.jsonp($scope.yourAPI+'/?page='+$scope.pageNumber+'&callback=JSON_CALLBACK').error(function(jqXHR, textStatus){
         alert("### ERROR ###");
-        alert(textStatus +' // '+ errorThrown);
-        alert($scope.yourAPI+'?page='+$scope.pageNumber);
+        alert(textStatus);
+        alert($scope.yourAPI+'?page='+$scope.pageNumber+'&callback=JSON_CALLBACK');
       }).success(function(response) {
 
         if($scope.pageNumber > response.pages){

@@ -59,7 +59,7 @@
 
   app.controller('newsController', ['$http', '$scope', '$rootScope', function($http, $scope, $rootScope) {
 
-    $scope.yourAPI = 'https://bougetafrance.fr/api/get_recent_posts/';
+    $scope.yourAPI = 'http://eglisededemain.fr/api/get_recent_posts/';
     $scope.items = [];
     $scope.totalPages = 0;
     $scope.currentPage = 1;
@@ -69,12 +69,11 @@
 
 
     $scope.pullContent = function() {
-      $http.jsonp($scope.yourAPI+'/?page='+$scope.pageNumber)
-        .error(function(jqXHR, textStatus, errorThrown){
-          alert("### ERROR ###");
-          alert(textStatus +' // '+ errorThrown);
-          alert($scope.yourAPI+'?page='+$scope.pageNumber);
-        }).success(function(response) {
+      $http.jsonp($scope.yourAPI+'/?page='+$scope.pageNumber+'&callback=JSON_CALLBACK').error(function(jqXHR, textStatus, errorThrown){
+        alert("### ERROR ###");
+        alert(textStatus +' // '+ errorThrown);
+        alert($scope.yourAPI+'?page='+$scope.pageNumber);
+      }).success(function(response) {
 
         if($scope.pageNumber > response.pages){
 
@@ -105,47 +104,6 @@
         }
 
       });
-
-      // $.ajax({
-      //   url: $scope.yourAPI+'?page='+$scope.pageNumber,
-      //   dataType: 'json',
-      //   success: function(response){
-      //
-      //     if($scope.pageNumber > response.pages){
-      //
-      //       // hide the more news button
-      //       $('#moreButton').fadeOut('fast');
-      //
-      //     } else {
-      //
-      //       $scope.items = $scope.items.concat(response.posts);
-      //       window.localStorage.setObject('rootsPosts', $scope.items); // we save the posts in localStorage
-      //       window.localStorage.setItem('rootsDate', new Date());
-      //       window.localStorage.setItem("rootsLastPage", $scope.currentPage);
-      //       window.localStorage.setItem("rootsTotalPages", response.pages);
-      //
-      //       // For dev purposes you can remove the comment for the line below to check on the console the size of your JSON in local Storage
-      //       // for(var x in localStorage)console.log(x+"="+((localStorage[x].length * 2)/1024/1024).toFixed(2)+" MB");
-      //
-      //       $scope.totalPages = response.pages;
-      //       $scope.isFetching = false;
-      //
-      //       if($scope.pageNumber == response.pages){
-      //
-      //         // hide the more news button
-      //         $('#moreButton').fadeOut('fast');
-      //
-      //       }
-      //
-      //     }
-      //   },
-      //   error: function(jqXHR, textStatus, errorThrown){
-      //     alert("### ERROR ###");
-      //     alert(textStatus +' // '+ errorThrown);
-      //     alert($scope.yourAPI+'?page='+$scope.pageNumber);
-      //   }
-      // });
-
     }
 
     $scope.getAllRecords = function(pageNumber) {

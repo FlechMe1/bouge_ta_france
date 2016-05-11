@@ -10,8 +10,6 @@
     <content src="index.html" />
     <access origin="*" />
 
-    <feature name="http://api.phonegap.com/1.0/network"/>
-
     <preference name="KeyboardDisplayRequiresUserAction" value="true" />
     <preference name="MediaPlaybackRequiresUserAction" value="false" />
     <preference name="AllowInlineMediaPlayback" value="true" />
