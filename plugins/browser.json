@@ -9,9 +9,6 @@
     "installed_plugins": {
         "org.apache.cordova.network-information": {
             "PACKAGE_NAME": "com.phonegap.bougetafrance"
-        },
-        "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "com.phonegap.bougetafrance"
         }
     },
     "dependent_plugins": {}

@@ -9,10 +9,6 @@
                 "parents": {
                     "/*": [
                         {
-                            "xml": "<feature name=\"Whitelist\"><param name=\"android-package\" value=\"org.apache.cordova.whitelist.WhitelistPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
-                            "count": 1
-                        },
-                        {
                             "xml": "<feature name=\"NetworkStatus\"><param name=\"android-package\" value=\"org.apache.cordova.networkinformation.NetworkManager\" /></feature>",
                             "count": 1
                         }
@@ -32,9 +28,6 @@
         }
     },
     "installed_plugins": {
-        "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "com.phonegap.bougetafrance"
-        },
         "org.apache.cordova.network-information": {
             "PACKAGE_NAME": "com.phonegap.bougetafrance"
         }
@@ -58,7 +51,6 @@
         }
     ],
     "plugin_metadata": {
-        "cordova-plugin-whitelist": "1.2.2",
         "org.apache.cordova.network-information": "0.2.14"
     }
 }

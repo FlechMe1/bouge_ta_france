@@ -27,8 +27,7 @@ module.exports = [
 module.exports.metadata = 
 // TOP OF METADATA
 {
-    "org.apache.cordova.network-information": "0.2.14",
-    "cordova-plugin-whitelist": "1.2.2"
+    "org.apache.cordova.network-information": "0.2.14"
 }
 // BOTTOM OF METADATA
 });
