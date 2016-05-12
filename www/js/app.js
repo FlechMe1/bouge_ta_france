@@ -69,9 +69,7 @@
 
 
     $scope.pullContent = function() {
-      $http.jsonp($scope.yourAPI+'/?page='+$scope.pageNumber+'&callback=JSON_CALLBACK').error(function(jqXHR, textStatus){
-        alert("### ERREUR - IMPOSSIBLE DE CHARGER LES ACTUALITES ###");
-      }).success(function(response) {
+      $http.jsonp($scope.yourAPI+'/?page='+$scope.pageNumber+'&callback=JSON_CALLBACK').success(function(response) {
 
         if($scope.pageNumber > response.pages){
 
@@ -101,6 +99,8 @@
 
         }
 
+      }).error(function(jqXHR, textStatus){
+        alert("### ERREUR - IMPOSSIBLE DE CHARGER LES ACTUALITES ###");
       });
     }
 
