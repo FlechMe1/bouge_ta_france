@@ -7,6 +7,14 @@
 
   <title>Bouge ta France 2017</title>
 
+  <meta http-equiv="Content-Security-Policy"
+          content="default-src * *;
+                  script-src 'self' 'unsafe-eval' 'unsafe-inline' https://bougetafrance.fr maps.google.com maps.googleapis.com google.com;
+                  connect-src 'self' https://bougetafrance.fr google.com;
+                  img-src 'self' https://bougetafrance.fr maps.google.com maps.googleapis.com maps.gstatic.com data: csi.gstatic.com google.com;
+                  style-src 'self' 'unsafe-inline' fonts.googleapis.com  https://bougetafrance.fr google.com;">
+
+
   <!-- All our CSS -->
   <!-- onsen-css-components.css is the skin of your app, you can generate one custom skin with this generator: http://components.onsen.io/ -->
   <link href='https://fonts.googleapis.com/css?family=Telex' rel='stylesheet' type='text/css'>

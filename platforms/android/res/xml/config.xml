@@ -12,6 +12,7 @@
         Paul Gruson
     </author>
     <content src="index.html" />
+    <access origin="*" />
     <preference name="KeyboardDisplayRequiresUserAction" value="true" />
     <preference name="MediaPlaybackRequiresUserAction" value="false" />
     <preference name="AllowInlineMediaPlayback" value="true" />
