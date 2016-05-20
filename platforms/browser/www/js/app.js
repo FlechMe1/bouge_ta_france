@@ -188,15 +188,19 @@
   app.controller('mediasController', ['$scope', '$http', '$sce', function($scope, $http, $sce) {
 
     $scope.yourAPI = "https://bougetafrance.fr/api/get_page/?slug=mediatheque"
+    $scope.isFetching = true;
 
     $scope.getPage = function() {
-      $.ajax({
-        url: $scope.yourAPI,
-        dataType: 'json',
-        success: function(response){
-          console.log(response);
-          $scope.item =response.page;
-        }
+
+      $http.jsonp($scope.yourAPI+'&callback=JSON_CALLBACK').success(function(response) {
+
+        $('#moreButton').fadeOut('fast');
+        $scope.isFetching = false;
+        $scope.item =response.page;
+
+
+      }).error(function(jqXHR, textStatus){
+        alert("### ERREUR - IMPOSSIBLE DE CHARGER LES MEDIAS ###");
       });
     }
     $scope.renderHtml = function(htmlCode) {

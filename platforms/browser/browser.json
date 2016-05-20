@@ -9,6 +9,12 @@
     "installed_plugins": {
         "org.apache.cordova.network-information": {
             "PACKAGE_NAME": "com.phonegap.bougetafrance"
+        },
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "com.phonegap.bougetafrance"
+        },
+        "cordova-plugin-geolocation": {
+            "PACKAGE_NAME": "com.phonegap.bougetafrance"
         }
     },
     "dependent_plugins": {},
@@ -38,6 +44,8 @@
         }
     ],
     "plugin_metadata": {
-        "org.apache.cordova.network-information": "0.2.14"
+        "org.apache.cordova.network-information": "0.2.14",
+        "cordova-plugin-compat": "1.0.0",
+        "cordova-plugin-geolocation": "2.2.0"
     }
 }
