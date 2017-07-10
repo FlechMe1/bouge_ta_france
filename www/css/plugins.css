@@ -313,7 +313,7 @@ a.label:focus {
   background-image: linear-gradient(to bottom, #f5f5f5 0, #e8e8e8 100%);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff5f5f5', endColorstr='#ffe8e8e8', GradientType=0);
-  background-color: #e8e8e8;
+  background-color: #059691;
 }
 .dropdown-menu > .active > a,
 .dropdown-menu > .active > a:hover,

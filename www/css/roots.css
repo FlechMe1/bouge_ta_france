@@ -268,7 +268,7 @@ map.fullscreen {
   left: 50%;
   margin-top: -25px;
   margin-left: -25px;
-  color: #6cd2e1;
+  color: #059691;
   position: absolute;
 }
 /* Login Page */
@@ -1196,7 +1196,7 @@ ons-page.friends .person-image img {
   width: 30px;
   height: 30px;
   border-radius: 50% 50% 50% 0;
-  background: #0185e7;
+  background: #059691;
   position: absolute;
   -webkit-transform: rotate(-45deg);
   -ms-transform: rotate(-45deg);

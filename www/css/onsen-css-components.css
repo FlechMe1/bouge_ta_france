@@ -448,7 +448,8 @@ h6 {
   float: left;
 }
 .navigation-bar__left {
-  max-width: 50%;
+    margin-top: 10px;
+    max-width: 50%;
   width: 27%;
   text-align: left;
 }
@@ -3977,4 +3978,7 @@ input[type="search"].search-input::-webkit-search-cancel-button {
   text-align: center;
   color: #fff;
   white-space: normal;
+}
+.button {
+text-decoration: none;
 }
